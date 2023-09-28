@@ -1,0 +1,2 @@
+-database connection ko lagi sequelize  and mysql2 install garnu parxa
+-npm i express, ejs , nodemon (in terminal)

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Blog Page</title>
+    <style>
+        /* Internal CSS for styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .blog-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .blog-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .blog-description {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .blog-footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-container">
+        <h1 class="blog-title"><%- data[0].title %></h1>
+        <h2 class="blog-subtitle"><%- data[0].subtitle %></h2>
+        <p class="blog-description">
+            <%- data[0].description %>
+        </p>
+        <div class="blog-footer">
+           Published On <%- data[0].createdAt.toString().slice(0,10) %>
+        </div>
+        <button> <a href="/delete/<%- data[0].id %>"> Delete</a></button>
+        <button> <a href="/edit/<%- data[0].id %>">Edit</a></button>
+        <button> <a href="/">Back To Home</a></button>
+    </div>
+</body>
+</html>
